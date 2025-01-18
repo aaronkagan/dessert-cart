@@ -14,7 +14,7 @@ export default function DesertCard({ product }: { product: Product }) {
         className="w-full object-cover"
       />
       <div className="flex justify-center my-4">
-        <AddToCartButton qty={0} />
+        <AddToCartButton product={product} />
       </div>
       <h3>{product.category}</h3>
       <h2>{product.name}</h2>

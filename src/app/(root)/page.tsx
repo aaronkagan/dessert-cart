@@ -1,13 +1,12 @@
 import DesertCard from '@/components/desert-card';
 import { Metadata } from 'next';
+import { data as products } from '../../../public/data';
 
 export const metadata: Metadata = {
   title: 'Home',
 };
 
-import { data as products } from '../../../public/data';
-
-export default async function Home() {
+export default function Home() {
   return (
     <div className="max-w-[90%] mx-auto ">
       <h1 className="font-bold text-2xl">Desserts</h1>

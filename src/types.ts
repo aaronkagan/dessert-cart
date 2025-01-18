@@ -1,10 +1,10 @@
-type CartItem = {
+export type CartItem = {
   name: string;
   price: number;
   qty: number;
 };
 
-type Product = {
+export type Product = {
   image: {
     thumbnail: string;
     mobile: string;

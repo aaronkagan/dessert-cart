@@ -1,6 +1,6 @@
 'use client';
 
-import { removeFromCart, selectCart } from '@/lib/features/cart/cart-slice';
+import { removeFromCart, selectCart } from '@/lib/features/cart-slice';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import Image from 'next/image';
 

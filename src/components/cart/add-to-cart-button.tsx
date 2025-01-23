@@ -7,7 +7,7 @@ import {
   increaseQty,
   removeFromCart,
   selectCart,
-} from '@/lib/features/cart/cart-slice';
+} from '@/lib/features/cart-slice';
 import { Product } from '@/types';
 
 export default function AddToCartButton({ product }: { product: Product }) {

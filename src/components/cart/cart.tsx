@@ -17,11 +17,13 @@ export default function Cart() {
             <div key={item.name} className="flex gap-4">
               <div className="flex justify-between w-full">
                 <table className="w-full">
-                  <tr className="flex justify-between">
-                    <td>{item.name}</td>
-                    <td className="bg-red-50">${item.price.toFixed(2)}</td>
-                    <td>{item.qty}</td>
-                  </tr>
+                  <tbody>
+                    <tr className="flex justify-between">
+                      <td>{item.name}</td>
+                      <td className="bg-red-50">${item.price.toFixed(2)}</td>
+                      <td>{item.qty}</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
               <button onClick={() => dispatch(removeFromCart(item.name))}>

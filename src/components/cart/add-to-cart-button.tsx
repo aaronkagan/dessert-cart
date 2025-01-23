@@ -20,19 +20,19 @@ export default function AddToCartButton({ product }: { product: Product }) {
     elem.name === product.name ? (cartQty = elem.qty) : null
   );
 
+  function handleButtonClick() {
+    if (cartQty > 1) {
+      dispatch(decreaseQty(product.name));
+    } else {
+      dispatch(removeFromCart(product.name));
+    }
+  }
+
   return (
     <div className="border w-[10rem] rounded-full px-4 flex justify-center">
       {cartQty > 0 ? (
         <button className="flex gap-5 items-center">
-          <span
-            onClick={() => {
-              cartQty > 1
-                ? dispatch(decreaseQty(product.name))
-                : dispatch(removeFromCart(product.name));
-            }}
-          >
-            -
-          </span>
+          <span onClick={handleButtonClick}>-</span>
           {cartQty}
           <span
             onClick={() => {

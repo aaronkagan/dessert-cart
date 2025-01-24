@@ -14,12 +14,12 @@ import {
 } from '@/lib/features/products-slice';
 
 import { Product } from '@/types';
-import { getCartQty } from '@/utils';
 import Image from 'next/image';
+import { UseCartQty } from '@/custom-hooks/use-cart-qty';
 
 export default function AddToCartButton({ product }: { product: Product }) {
   const dispatch = useAppDispatch();
-  const cartQty = getCartQty(product.name);
+  const cartQty = UseCartQty(product.name);
 
   return (
     <div className="w-[10rem] rounded-full flex justify-center">

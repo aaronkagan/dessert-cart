@@ -10,8 +10,10 @@ export default function Cart() {
   const dispatch = useAppDispatch();
 
   return (
-    <aside className="w-full">
-      <h2>Your Cart ({cart.length})</h2>
+    <aside className="w-full bg-white rounded-lg p-5 h-fit">
+      <h2 className="font-bold text-[#b93c11] text-xl">
+        Your Cart ({cart.length})
+      </h2>
       <section>
         {cart.length > 0 ? (
           cart.map((item) => (
@@ -46,7 +48,17 @@ export default function Cart() {
             </div>
           ))
         ) : (
-          <p>Your cart is empty</p>
+          <div className="flex flex-col items-center mt-5">
+            <Image
+              src="/images/illustration-empty-cart.svg"
+              alt="empty cart"
+              height={150}
+              width={150}
+            />
+            <p className="text-center mt-5 text-[#796662] font-bold">
+              Your added items will appear here
+            </p>
+          </div>
         )}
       </section>
     </aside>

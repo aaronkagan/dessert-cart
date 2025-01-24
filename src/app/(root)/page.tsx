@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="max-w-[90%] mx-auto ">
-      <h1 className="font-bold text-2xl">Desserts</h1>
-      <div className="grid grid-cols-3 gap-10 mt-5">
+    <div className="max-w-[90%] mx-auto py-10">
+      <h1 className="font-extrabold text-4xl text-[#2e1a11]">Desserts</h1>
+      <div className="grid md:grid-cols-3 gap-10 mt-5">
         <CardsSection />
         <Cart />
       </div>

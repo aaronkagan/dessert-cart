@@ -7,7 +7,7 @@ export default function CardsSection() {
   const products = useAppSelector(selectProducts);
 
   return (
-    <section className="grid md:grid-cols-4 gap-5 col-span-2">
+    <section className="grid md:grid-cols-3 gap-5 md:col-span-2">
       {products.map((product) => (
         <DesertCard key={product.name} product={product}></DesertCard>
       ))}

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="max-w-[90%] mx-auto py-10">
+    <div className="md:max-w-[70%]  max-w-[90%] mx-auto py-10">
       <h1 className="font-extrabold text-4xl text-[#2e1a11]">Desserts</h1>
       <div className="grid md:grid-cols-3 gap-10 mt-5">
         <CardsSection />

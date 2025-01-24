@@ -1,6 +1,7 @@
 'use client';
 
 import { removeFromCart, selectCart } from '@/lib/features/cart-slice';
+import { resetStock } from '@/lib/features/products-slice';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import Image from 'next/image';
 
@@ -28,7 +29,12 @@ export default function Cart() {
                   </tbody>
                 </table>
               </div>
-              <button onClick={() => dispatch(removeFromCart(item.name))}>
+              <button
+                onClick={() => {
+                  dispatch(removeFromCart(item.name));
+                  dispatch(resetStock(item.name));
+                }}
+              >
                 <Image
                   src="/images/icon-remove-item.svg"
                   className="w-4 h-4"

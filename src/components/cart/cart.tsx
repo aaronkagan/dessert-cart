@@ -20,7 +20,9 @@ export default function Cart() {
                   <tbody>
                     <tr className="flex justify-between">
                       <td>{item.name}</td>
-                      <td className="bg-red-50">${item.price.toFixed(2)}</td>
+                      <td className="bg-red-50">
+                        ${(item.price * item.qty).toFixed(2)}
+                      </td>
                       <td>{item.qty}</td>
                     </tr>
                   </tbody>

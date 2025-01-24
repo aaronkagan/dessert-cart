@@ -63,7 +63,7 @@ export default function AddToCartButton({ product }: { product: Product }) {
             />
           </span>
         </button>
-      ) : (
+      ) : product.stock > 0 ? (
         <button
           onClick={() => {
             if (product.stock > 0) {
@@ -79,8 +79,20 @@ export default function AddToCartButton({ product }: { product: Product }) {
             height={10}
             width={10}
             className="w-4 h-4"
-          />{' '}
+          />
           Add To Cart
+        </button>
+      ) : (
+        <button
+          onClick={() => {
+            if (product.stock > 0) {
+              dispatch(addToCart(product));
+              dispatch(decreaseStock(product.name));
+            }
+          }}
+          className="font-bold flex items-center gap-2 text-sm px-4 py-2 border rounded-full w-full justify-center bg-black text-white"
+        >
+          Out of Stock
         </button>
       )}
     </div>

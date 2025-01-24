@@ -46,8 +46,10 @@ export default function AddToCartButton({ product }: { product: Product }) {
           {cartQty}
           <span
             onClick={() => {
-              dispatch(increaseQty(product.name));
-              dispatch(decreaseStock(product.name));
+              if (product.stock > 0) {
+                dispatch(increaseQty(product.name));
+                dispatch(decreaseStock(product.name));
+              }
             }}
           >
             +
@@ -56,8 +58,10 @@ export default function AddToCartButton({ product }: { product: Product }) {
       ) : (
         <button
           onClick={() => {
-            dispatch(addToCart(product));
-            dispatch(decreaseStock(product.name));
+            if (product.stock > 0) {
+              dispatch(addToCart(product));
+              dispatch(decreaseStock(product.name));
+            }
           }}
         >
           + Add To Cart

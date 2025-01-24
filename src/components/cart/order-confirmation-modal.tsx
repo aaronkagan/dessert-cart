@@ -20,7 +20,7 @@ export default function OrderConfirmationModal({ cart }: { cart: CartItem[] }) {
           Confirm Order
         </button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="[&>button]:hidden">
         <DialogHeader>
           <Image
             src="/images/icon-order-confirmed.svg"

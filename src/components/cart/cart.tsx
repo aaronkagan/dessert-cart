@@ -17,19 +17,28 @@ export default function Cart() {
       <section>
         {cart.length > 0 ? (
           cart.map((item) => (
-            <div key={item.name} className="flex gap-4">
+            <div
+              key={item.name}
+              className="flex gap-4 border-b-[1px] py-1 mt-2"
+            >
               <div className="flex justify-between w-full">
-                <table className="w-full">
-                  <tbody>
-                    <tr className="flex justify-between">
-                      <td>{item.name}</td>
-                      <td className="bg-red-50">
+                <div className="w-full">
+                  <div className="flex flex-col gap-1">
+                    <p className="font-bold text-sm">{item.name}</p>
+                    <div className="flex items-center">
+                      <p className="mr-5 text-[#b93c11] font-semibold">
+                        {item.qty}x
+                      </p>
+                      <p className="mr-2 opacity-50">
+                        <span className="text-xs">@</span>$
+                        {item.price.toFixed(2)}
+                      </p>
+                      <p className="font-semibold">
                         ${(item.price * item.qty).toFixed(2)}
-                      </td>
-                      <td>{item.qty}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <button
                 onClick={() => {
@@ -39,7 +48,7 @@ export default function Cart() {
               >
                 <Image
                   src="/images/icon-remove-item.svg"
-                  className="w-4 h-4"
+                  className="w-3 h-3"
                   width={50}
                   height={50}
                   alt="remove item"

@@ -35,15 +35,14 @@ export default function AddToCartButton({ product }: { product: Product }) {
                 dispatch(resetStock(product.name));
               }
             }}
-            className="hover:bg-white rounded-full w-4 h-4 flex items-center justify-center border"
+            className=" rounded-full w-4 h-4 flex items-center justify-center border"
           >
             {' '}
             <Image
               width={8}
               height={8}
               src="/images/icon-decrement-quantity.svg"
-              alt="increment quantity"
-              className="hover:text-black"
+              alt="decrement quantity"
             />
           </span>
           {cartQty}
@@ -54,7 +53,7 @@ export default function AddToCartButton({ product }: { product: Product }) {
                 dispatch(decreaseStock(product.name));
               }
             }}
-            className="hover:bg-white rounded-full w-4 h-4 flex items-center justify-center border"
+            className=" rounded-full w-4 h-4 flex items-center justify-center border"
           >
             <Image
               width={8}

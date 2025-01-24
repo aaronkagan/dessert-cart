@@ -14,6 +14,7 @@ export const cartSlice = createSlice({
         name: action.payload.name,
         price: action.payload.price,
         qty: 1,
+        image: action.payload.image.thumbnail,
       });
     },
     // Using the item name as the payload

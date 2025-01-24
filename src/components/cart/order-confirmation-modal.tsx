@@ -42,7 +42,7 @@ export default function OrderConfirmationModal({ cart }: { cart: CartItem[] }) {
               >
                 <div className="flex gap-5">
                   <Image
-                    src="/images/image-macaron-thumbnail.jpg"
+                    src={`/images/${item.image}`}
                     alt={item.name}
                     width={50}
                     height={50}

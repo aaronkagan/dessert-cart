@@ -1,12 +1,11 @@
 'use client';
 
-import { useAppDispatch, useAppSelector } from '@/lib/hooks';
+import { useAppDispatch } from '@/lib/hooks';
 import {
   addToCart,
   decreaseQty,
   increaseQty,
   removeFromCart,
-  selectCart,
 } from '@/lib/features/cart-slice';
 import {
   decreaseStock,

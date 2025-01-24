@@ -15,16 +15,11 @@ import {
 } from '@/lib/features/products-slice';
 
 import { Product } from '@/types';
+import { getCartQty } from '@/utils';
 
 export default function AddToCartButton({ product }: { product: Product }) {
-  const cart = useAppSelector(selectCart);
   const dispatch = useAppDispatch();
-
-  let cartQty = 0;
-
-  cart.forEach((elem) =>
-    elem.name === product.name ? (cartQty = elem.qty) : null
-  );
+  const cartQty = getCartQty(product.name);
 
   return (
     <div className="border w-[10rem] rounded-full px-4 flex justify-center">

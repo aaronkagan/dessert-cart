@@ -19,7 +19,9 @@ export default function DesertCard({ product }: { product: Product }) {
       <h3>{product.category}</h3>
       <h2>{product.name}</h2>
       <p>${product.price.toFixed(2)}</p>
-      <p>In Stock: {product.stock}</p>
+      <p className={product.stock === 0 ? 'text-red-500' : ''}>
+        Stock: {product.stock}
+      </p>
     </article>
   );
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Dialog,
   DialogClose,
@@ -8,11 +10,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { resetCart } from '@/lib/features/cart-slice';
+import { useAppDispatch } from '@/lib/hooks';
 import { CartItem } from '@/types';
 import { getCartTotal } from '@/utils';
 import Image from 'next/image';
 
 export default function OrderConfirmationModal({ cart }: { cart: CartItem[] }) {
+  const dispatch = useAppDispatch();
   return (
     <Dialog>
       <DialogTrigger asChild className="w-full">
@@ -70,7 +75,10 @@ export default function OrderConfirmationModal({ cart }: { cart: CartItem[] }) {
         </DialogHeader>
         <DialogFooter>
           <DialogClose asChild>
-            <button className="text-white text-sm px-4 py-2 border rounded-full w-full justify-center bg-[#c43d10] hover:bg-[#932d0b] mt-2">
+            <button
+              onClick={() => dispatch(resetCart())}
+              className="text-white text-sm px-4 py-2 border rounded-full w-full justify-center bg-[#c43d10] hover:bg-[#932d0b] mt-2"
+            >
               Start New Order
             </button>
           </DialogClose>

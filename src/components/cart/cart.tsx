@@ -6,6 +6,8 @@ import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { getCartTotal } from '@/utils';
 import Image from 'next/image';
 
+import OrderConfirmationModal from './order-confirmation-modal';
+
 export default function Cart() {
   const cart = useAppSelector(selectCart);
   const dispatch = useAppDispatch();
@@ -71,9 +73,7 @@ export default function Cart() {
               />
               <p className="text-xs">This is a carbon neutral order</p>
             </div>
-            <button className="text-white text-sm px-4 py-2 border rounded-full w-full justify-center bg-[#c43d10] hover:bg-[#932d0b] mt-2">
-              Confirm Order
-            </button>
+            <OrderConfirmationModal cart={cart} />
           </div>
         ) : (
           <div className="flex flex-col items-center mt-5">
